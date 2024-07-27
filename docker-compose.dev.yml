@@ -1,0 +1,18 @@
+version: "3.5"
+
+services:
+  app:
+    image: my-app:dev
+    container_name: my-app-dev
+    build:
+      context: .
+      dockerfile: ./Dockerfile.dev
+    environment:
+      NODE_ENV: development
+      # Add other development-specific environment variables here
+    volumes:
+      - ./public:/app/public
+      - ./src:/app/src
+      - ./app:/app/app
+    ports:
+      - 3000:3000
