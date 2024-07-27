@@ -2,13 +2,11 @@
 services:
 - type: web
   name: next-docker-starter-kit
-  runtime: node
+  runtime: docker
   repo: https://github.com/alamenai/next-docker-starter-kit
   plan: starter
   envVars:
   - key: PORT
     sync: false
   region: frankfurt
-  buildCommand: npm install && npm run build
-  startCommand: npm start
 version: "1"
